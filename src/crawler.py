@@ -13,7 +13,7 @@ import logging
 import time
 from collections import deque
 from dataclasses import dataclass, field
-from typing import Callable, Iterator, Optional, Set
+from typing import Callable, Iterator, Optional, Set, Tuple
 from urllib.parse import urldefrag, urljoin, urlparse
 
 import requests
@@ -73,6 +73,13 @@ class Crawler:
     clock:
         Monotonic clock callable returning seconds.  Overridable for
         deterministic testing.
+    skip_path_prefixes:
+        Tuple of URL-path prefixes that, if matched, exclude a discovered
+        link from the BFS frontier.  Used by callers (e.g. ``cmd_build``)
+        to filter out paths that have no useful indexable content (e.g.
+        ``/login``) or that merely re-arrange content already indexed
+        elsewhere (e.g. ``/tag/`` listing pages).  The ``start_url``
+        itself is **not** filtered.
     """
 
     start_url: str = DEFAULT_START_URL
@@ -83,6 +90,7 @@ class Crawler:
     session: Optional[requests.Session] = None
     sleep: Callable[[float], None] = time.sleep
     clock: Callable[[], float] = time.monotonic
+    skip_path_prefixes: Tuple[str, ...] = ()
 
     _last_request_time: Optional[float] = field(default=None, init=False, repr=False)
     _visited: Set[str] = field(default_factory=set, init=False, repr=False)
@@ -213,7 +221,13 @@ class Crawler:
                 continue
             if parsed.scheme not in {"http", "https"}:
                 continue
+            if self._is_skipped(parsed.path):
+                continue
             yield normalized
+
+    def _is_skipped(self, path: str) -> bool:
+        """Return True if ``path`` matches any of :attr:`skip_path_prefixes`."""
+        return any(path.startswith(prefix) for prefix in self.skip_path_prefixes)
 
     # ------------------------------------------------------------------
     # Helpers

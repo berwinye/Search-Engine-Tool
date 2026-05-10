@@ -109,6 +109,37 @@ class TokenizationFreeCrawlerTests(unittest.TestCase):
         # mailto / javascript schemes are skipped
         self.assertTrue(all(link.startswith("https://quotes.toscrape.com") for link in links))
 
+    def test_extract_links_filters_skip_path_prefixes(self) -> None:
+        """Configured ``skip_path_prefixes`` must drop matching links."""
+        crawler = Crawler(
+            start_url="https://quotes.toscrape.com/",
+            skip_path_prefixes=("/login", "/tag/"),
+        )
+        html = """
+            <html><body>
+                <a href="/page/2/">next</a>
+                <a href="/author/Some-One">author</a>
+                <a href="/login">login</a>
+                <a href="/tag/love/page/1/">tag-love</a>
+                <a href="/tag/humor/">tag-humor</a>
+            </body></html>
+        """
+        links = list(
+            crawler._extract_links(
+                html,
+                base_url="https://quotes.toscrape.com/",
+                domain="quotes.toscrape.com",
+            )
+        )
+        self.assertIn("https://quotes.toscrape.com/page/2/", links)
+        self.assertIn("https://quotes.toscrape.com/author/Some-One", links)
+        # Skipped prefixes must not appear in the BFS frontier.
+        self.assertNotIn("https://quotes.toscrape.com/login", links)
+        self.assertFalse(
+            any("/tag/" in link for link in links),
+            f"tag links must be filtered, got {links!r}",
+        )
+
 
 class CrawlBehaviourTests(unittest.TestCase):
     def setUp(self) -> None:
