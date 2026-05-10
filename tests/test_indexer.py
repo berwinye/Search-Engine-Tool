@@ -153,6 +153,53 @@ class IndexerSerialisationTests(unittest.TestCase):
             loaded.postings("good"), original.postings("good")
         )
 
+    def test_load_preserves_full_state_byte_for_byte(self) -> None:
+        """Save → load → save must reproduce identical on-disk content,
+        and every internal field must compare equal to the original."""
+        original = self._build()
+        # Add a 3rd document with multiple terms / repeated tokens / a
+        # title containing punctuation, so we exercise positions, freqs,
+        # and document metadata together.
+        original.add_document(
+            "https://example.com/c",
+            "<title>Chapter 3: Friends!</title>"
+            "<p>Good good GOOD friend, friend, evening.</p>",
+        )
+        original.save(self.path)
+
+        loaded = Indexer.load(self.path)
+
+        # 1. Documents dict (URL -> {length, title}) must match exactly.
+        self.assertEqual(loaded.documents, original.documents)
+        # 2. Full inverted index (term -> {url -> {freq, positions}})
+        #    must match exactly — this catches any drift in freq counts,
+        #    position lists, or term keys.
+        self.assertEqual(loaded.inverted_index, original.inverted_index)
+        # 3. Re-saving the loaded copy must produce byte-identical JSON.
+        second_path = self.path + ".second"
+        loaded.save(second_path)
+        with open(self.path, "rb") as a, open(second_path, "rb") as b:
+            self.assertEqual(a.read(), b.read())
+
+    def test_load_recovers_positions_and_titles(self) -> None:
+        """Spot-check that non-trivial fields survive the round-trip."""
+        original = Indexer()
+        original.add_document(
+            "https://example.com/x",
+            "<title>My Title</title><p>alpha beta alpha gamma alpha</p>",
+        )
+        original.save(self.path)
+        loaded = Indexer.load(self.path)
+
+        self.assertEqual(loaded.documents["https://example.com/x"]["title"],
+                         "My Title")
+        # Title ("my", "title") + body (5 tokens) = 7 tokens total.
+        self.assertEqual(loaded.documents["https://example.com/x"]["length"], 7)
+        alpha = loaded.postings("alpha")["https://example.com/x"]
+        self.assertEqual(alpha["freq"], 3)
+        # Positions are 0-indexed; title takes slots 0,1, then body starts at 2.
+        self.assertEqual(alpha["positions"], [2, 4, 6])
+
     def test_load_raises_on_missing_file(self) -> None:
         with self.assertRaises(FileNotFoundError):
             Indexer.load(os.path.join(self.tmpdir.name, "missing.json"))
