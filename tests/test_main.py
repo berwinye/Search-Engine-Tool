@@ -142,6 +142,11 @@ def _make_quotes_pages() -> Dict[str, _FakeResponse]:
     # Listing pages 1..10, each linking to a couple of authors and a tag.
     listings = [base + "/"] + [f"{base}/page/{n}/" for n in range(2, 11)]
     for idx, url in enumerate(listings, start=1):
+        # "Next page" link mirrors the real quotes.toscrape.com markup so
+        # a generic BFS crawl can discover all 10 listing pages from /.
+        next_link = (
+            f"<a href='/page/{idx + 1}/'>next</a>" if idx < 10 else ""
+        )
         pages[url] = _FakeResponse(
             f"<html><head><title>Quotes p{idx}</title></head><body>"
             f"<p>quote on page {idx}</p>"
@@ -151,6 +156,7 @@ def _make_quotes_pages() -> Dict[str, _FakeResponse]:
             # Tag links must be ignored.
             f"<a href='/tag/love/page/1/'>tag</a>"
             f"<a href='/login'>login</a>"
+            f"{next_link}"
             f"</body></html>"
         )
     # Author pages.

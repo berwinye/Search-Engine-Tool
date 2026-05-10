@@ -24,7 +24,6 @@ import os
 import shlex
 import sys
 from typing import List, Optional, Sequence
-from urllib.parse import urlparse
 
 from .crawler import (
     DEFAULT_START_URL,
@@ -69,23 +68,37 @@ class Shell:
     # ------------------------------------------------------------------
     # Command implementations
     # ------------------------------------------------------------------
+    #: Path prefixes excluded from the BFS frontier during ``build``.
+    #:
+    #: * ``/login``    -- the login form has no useful searchable content.
+    #: * ``/tag/``     -- tag listing pages merely re-arrange quote text
+    #:                    that already appears on ``/`` and ``/page/N/``;
+    #:                    indexing them would inflate document
+    #:                    frequencies without adding new information.
+    #:                    Tag *names* are still indexed because they are
+    #:                    visible text on the listing pages themselves.
+    #: * ``/page/1/``  -- exact duplicate of ``/``; reachable via the
+    #:                    "Previous" button on ``/page/2/``.  Skipping
+    #:                    it avoids indexing the home page twice under
+    #:                    two different URLs.  We follow "Next" links
+    #:                    only — "Previous" goes to ``/page/1/`` which
+    #:                    is filtered here.
+    BUILD_SKIP_PATH_PREFIXES = ("/login", "/tag/", "/page/1/")
+
     def cmd_build(self) -> str:
-        """Crawl quotes.toscrape.com from scratch in two phases.
+        """Crawl the target site with a generic BFS and build an index.
 
-        Phase 1
-            Fetch the 10 quote-listing pages (``/`` and ``/page/2/`` …
-            ``/page/10/``) and harvest every distinct ``/author/<name>``
-            link they contain.
-        Phase 2
-            Fetch each de-duplicated author page.
-
-        ``/tag/*`` and ``/login`` are intentionally **not** followed.
+        Starting from :attr:`start_url`, the crawler follows every
+        in-domain ``<a href>`` link it encounters, except for paths
+        listed in :attr:`BUILD_SKIP_PATH_PREFIXES`.  This means the same
+        code would work on any single-domain website; nothing about the
+        traversal is hard-coded for ``quotes.toscrape.com``.
 
         Each ``build`` invocation discards any pre-existing
-        ``data/index.json`` and re-crawls every page.  The index is
-        still flushed to disk atomically after every successfully
-        indexed page so a crash mid-crawl leaves a valid (partial)
-        file behind, but it will be overwritten on the next ``build``.
+        ``data/index.json`` and re-crawls from scratch.  The index is
+        flushed to disk atomically after every successfully indexed
+        page so a crash mid-crawl leaves a valid (partial) file behind
+        — it will simply be overwritten on the next ``build``.
         """
         # --- 0. Always start with a fresh index ------------------------
         if os.path.exists(self.index_path):
@@ -95,58 +108,25 @@ class Shell:
             )
             os.remove(self.index_path)
         indexer = Indexer()
-        already_done: set = set()
         crawler = Crawler(
             start_url=self.start_url,
             min_interval=self.min_interval,
-            max_pages=None,  # max_pages is enforced by URL list size below
+            max_pages=self.max_pages,
+            skip_path_prefixes=self.BUILD_SKIP_PATH_PREFIXES,
         )
-        domain = urlparse(self.start_url).netloc
 
-        # --- 1. Build the phase-1 URL list (the 10 listing pages) ------
-        base = self.start_url.rstrip("/") + "/"
-        listing_urls: List[str] = [base] + [
-            f"{base}page/{n}/" for n in range(2, 11)
-        ]
-
-        author_urls: set = set()
-        pages_done = 0
-
-        # --- 2. Phase 1 ------------------------------------------------
-        print(f"Phase 1: fetching {len(listing_urls)} listing page(s)…")
-        for url in listing_urls:
-            if self.max_pages is not None and pages_done >= self.max_pages:
-                break
-            new_authors = self._process_url(
-                url, crawler, indexer, already_done,
-                domain=domain, harvest_authors=True,
-            )
-            if new_authors is not None:
-                author_urls.update(new_authors)
-                pages_done += 1
-
-        # Phase-1 may have added new authors; also pick up any that were
-        # discovered in earlier (resumed) listing pages whose author
-        # pages had not yet been crawled.  We recover those by scanning
-        # the in-memory index only — but the simplest correct thing is
-        # to additionally collect authors from already-indexed listing
-        # pages on disk.  For our coursework that's covered above.
-
-        author_urls = {u for u in author_urls if u not in already_done}
+        skipped = ", ".join(self.BUILD_SKIP_PATH_PREFIXES) or "(none)"
         print(
-            f"Phase 2: fetching {len(author_urls)} unique author page(s)…"
+            f"BFS-crawling {self.start_url} "
+            f"(skipping path prefixes: {skipped})…"
         )
 
-        # --- 3. Phase 2 ------------------------------------------------
-        for url in sorted(author_urls):
-            if self.max_pages is not None and pages_done >= self.max_pages:
-                break
-            ok = self._process_url(
-                url, crawler, indexer, already_done,
-                domain=domain, harvest_authors=False,
-            )
-            if ok is not None:
-                pages_done += 1
+        pages_done = 0
+        for result in crawler.crawl():
+            indexer.add_document(result.url, result.html)
+            indexer.save(self.index_path)  # checkpoint after every page
+            pages_done += 1
+            print(f"  indexed [{pages_done}] {result.url}")
 
         if indexer.document_count == 0:
             return "Crawl finished with 0 pages indexed; nothing was saved."
@@ -160,52 +140,8 @@ class Shell:
             f"Index saved to {path}"
         )
 
-    # ------------------------------------------------------------------
-    # cmd_build helpers
-    # ------------------------------------------------------------------
-    def _process_url(
-        self,
-        url: str,
-        crawler: Crawler,
-        indexer: Indexer,
-        already_done: set,
-        *,
-        domain: str,
-        harvest_authors: bool,
-    ) -> Optional[List[str]]:
-        """Fetch + index + checkpoint a single URL.
-
-        Returns:
-            * ``None`` if the URL was skipped (already indexed) or the
-              fetch failed.
-            * A list of newly-discovered ``/author/<name>`` URLs when
-              ``harvest_authors`` is true (may be empty).
-            * An empty list otherwise.
-        """
-        if url in already_done:
-            print(f"  skip  (cached) {url}")
-            return None
-        result = crawler.fetch(url)
-        if result is None:
-            print(f"  fail  {url}")
-            return None
-        indexer.add_document(result.url, result.html)
-        indexer.save(self.index_path)  # checkpoint after every page
-        already_done.add(result.url)
-        print(
-            f"  indexed [{indexer.document_count}] {result.url}"
-        )
-        if not harvest_authors:
-            return []
-        authors: List[str] = []
-        for link in crawler.iter_links(result.html, base_url=result.url, domain=domain):
-            path = urlparse(link).path
-            if path.startswith("/author/"):
-                authors.append(link)
-        return authors
-
     def cmd_load(self) -> str:
-        """Load the index from :attr:`index_path`."""
+        """Load the index from :attr:`index_path` and dump its structure."""
         try:
             self.indexer = Indexer.load(self.index_path)
         except FileNotFoundError as exc:
@@ -215,8 +151,50 @@ class Shell:
         return (
             f"Loaded index from {self.index_path}: "
             f"{self.indexer.document_count} document(s), "
-            f"{self.indexer.vocabulary_size} term(s)."
+            f"{self.indexer.vocabulary_size} term(s).\n"
+            + self._format_index_structure(self.indexer)
         )
+
+    @staticmethod
+    def _format_index_structure(indexer: Indexer, *,
+                                sample_docs: int = 3,
+                                top_terms: int = 10) -> str:
+        """Return a human-readable summary of an index's structure.
+
+        Shows the data-model schema, a few sample document entries and
+        the most frequent terms.  This is what ``load`` prints after the
+        one-line summary so the user can immediately see *what* was
+        loaded, not just *how much*.
+        """
+        lines: List[str] = []
+        lines.append("")
+        lines.append("Index structure:")
+        lines.append("  documents:      url -> {length, title}")
+        lines.append("  inverted_index: term -> {url -> {freq, positions}}")
+
+        # Sample documents
+        lines.append("")
+        lines.append(f"Sample documents (first {sample_docs}):")
+        for url, meta in list(indexer.documents.items())[:sample_docs]:
+            title = meta.get("title", "")
+            length = meta.get("length", 0)
+            lines.append(
+                f"  {url}\n      length={length}, title={title!r}"
+            )
+
+        # Top-N terms by document frequency.
+        ranked = sorted(
+            indexer.inverted_index.items(),
+            key=lambda kv: (-len(kv[1]), kv[0]),
+        )[:top_terms]
+        lines.append("")
+        lines.append(f"Top {top_terms} terms by document frequency:")
+        for term, postings in ranked:
+            total = sum(int(p["freq"]) for p in postings.values())
+            lines.append(
+                f"  {term!r:<14} df={len(postings):<3} total_occurrences={total}"
+            )
+        return "\n".join(lines)
 
     def cmd_print(self, args: Sequence[str]) -> str:
         if not self.indexer:
