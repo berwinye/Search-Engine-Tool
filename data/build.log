@@ -1,466 +1,465 @@
 /Users/berwin/Desktop/project/cw_web2/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
   warnings.warn(
-Phase 1: fetching 10 listing page(s)…
-2026-05-09 23:16:17,377 INFO src.crawler: Fetching https://quotes.toscrape.com/
-2026-05-09 23:16:17,386 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): quotes.toscrape.com:443
-2026-05-09 23:16:19,185 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET / HTTP/1.1" 200 11064
-2026-05-09 23:16:19,203 DEBUG src.indexer: Indexed https://quotes.toscrape.com/ (287 tokens)
-2026-05-09 23:16:19,205 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (1 docs, 152 terms)
+BFS-crawling https://quotes.toscrape.com/ (skipping path prefixes: /login, /tag/, /page/1/)…
+2026-05-10 18:37:24,158 INFO src.crawler: Fetching https://quotes.toscrape.com/
+2026-05-10 18:37:24,170 DEBUG urllib3.connectionpool: Starting new HTTPS connection (1): quotes.toscrape.com:443
+2026-05-10 18:37:26,219 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET / HTTP/1.1" 200 11064
+2026-05-10 18:37:26,224 DEBUG src.indexer: Indexed https://quotes.toscrape.com/ (287 tokens)
+2026-05-10 18:37:26,226 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (1 docs, 152 terms)
   indexed [1] https://quotes.toscrape.com/
-2026-05-09 23:16:19,209 DEBUG src.crawler: Throttling for 5.99s
-2026-05-09 23:16:25,202 INFO src.crawler: Fetching https://quotes.toscrape.com/page/2/
-2026-05-09 23:16:25,525 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/2/ HTTP/1.1" 200 13745
-2026-05-09 23:16:25,762 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/2/ (618 tokens)
-2026-05-09 23:16:25,768 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (2 docs, 341 terms)
-  indexed [2] https://quotes.toscrape.com/page/2/
-2026-05-09 23:16:25,777 DEBUG src.crawler: Throttling for 5.97s
-2026-05-09 23:16:31,752 INFO src.crawler: Fetching https://quotes.toscrape.com/page/3/
-2026-05-09 23:16:32,089 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/3/ HTTP/1.1" 200 10029
-2026-05-09 23:16:32,093 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/3/ (339 tokens)
-2026-05-09 23:16:32,097 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (3 docs, 423 terms)
-  indexed [3] https://quotes.toscrape.com/page/3/
-2026-05-09 23:16:32,101 DEBUG src.crawler: Throttling for 5.99s
-2026-05-09 23:16:38,095 INFO src.crawler: Fetching https://quotes.toscrape.com/page/4/
-2026-05-09 23:16:38,447 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/4/ HTTP/1.1" 200 10325
-2026-05-09 23:16:38,452 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/4/ (256 tokens)
-2026-05-09 23:16:38,458 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (4 docs, 473 terms)
-  indexed [4] https://quotes.toscrape.com/page/4/
-2026-05-09 23:16:38,462 DEBUG src.crawler: Throttling for 5.99s
-2026-05-09 23:16:44,453 INFO src.crawler: Fetching https://quotes.toscrape.com/page/5/
-2026-05-09 23:16:44,802 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/5/ HTTP/1.1" 200 10012
-2026-05-09 23:16:44,829 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/5/ (273 tokens)
-2026-05-09 23:16:44,842 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (5 docs, 531 terms)
-  indexed [5] https://quotes.toscrape.com/page/5/
-2026-05-09 23:16:44,848 DEBUG src.crawler: Throttling for 5.97s
-2026-05-09 23:16:50,819 INFO src.crawler: Fetching https://quotes.toscrape.com/page/6/
-2026-05-09 23:16:51,161 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/6/ HTTP/1.1" 200 10416
-2026-05-09 23:16:51,178 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/6/ (294 tokens)
-2026-05-09 23:16:51,192 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (6 docs, 589 terms)
-  indexed [6] https://quotes.toscrape.com/page/6/
-2026-05-09 23:16:51,199 DEBUG src.crawler: Throttling for 5.97s
-2026-05-09 23:16:57,175 INFO src.crawler: Fetching https://quotes.toscrape.com/page/7/
-2026-05-09 23:16:57,503 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/7/ HTTP/1.1" 200 10722
-2026-05-09 23:16:57,530 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/7/ (416 tokens)
-2026-05-09 23:16:57,538 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (7 docs, 684 terms)
-  indexed [7] https://quotes.toscrape.com/page/7/
-2026-05-09 23:16:57,541 DEBUG src.crawler: Throttling for 5.98s
-2026-05-09 23:17:03,531 INFO src.crawler: Fetching https://quotes.toscrape.com/page/8/
-2026-05-09 23:17:03,892 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/8/ HTTP/1.1" 200 11393
-2026-05-09 23:17:03,902 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/8/ (316 tokens)
-2026-05-09 23:17:03,910 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (8 docs, 751 terms)
-  indexed [8] https://quotes.toscrape.com/page/8/
-2026-05-09 23:17:03,913 DEBUG src.crawler: Throttling for 5.98s
-2026-05-09 23:17:09,894 INFO src.crawler: Fetching https://quotes.toscrape.com/page/9/
-2026-05-09 23:17:10,225 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/9/ HTTP/1.1" 200 11022
-2026-05-09 23:17:10,245 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/9/ (392 tokens)
-2026-05-09 23:17:10,254 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (9 docs, 820 terms)
-  indexed [9] https://quotes.toscrape.com/page/9/
-2026-05-09 23:17:10,258 DEBUG src.crawler: Throttling for 5.98s
-2026-05-09 23:17:16,247 INFO src.crawler: Fetching https://quotes.toscrape.com/page/10/
-2026-05-09 23:17:16,602 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/10/ HTTP/1.1" 200 9943
-2026-05-09 23:17:16,608 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/10/ (275 tokens)
-2026-05-09 23:17:16,623 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (10 docs, 858 terms)
-  indexed [10] https://quotes.toscrape.com/page/10/
-Phase 2: fetching 50 unique author page(s)…
-2026-05-09 23:17:16,628 DEBUG src.crawler: Throttling for 5.97s
-2026-05-09 23:17:22,606 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Albert-Einstein
-2026-05-09 23:17:22,943 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Albert-Einstein HTTP/1.1" 308 287
-2026-05-09 23:17:22,948 DEBUG urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7897
-2026-05-09 23:17:23,596 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Albert-Einstein/ HTTP/1.1" 200 5335
-2026-05-09 23:17:23,598 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Albert-Einstein (648 tokens)
-2026-05-09 23:17:23,611 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (11 docs, 1088 terms)
-  indexed [11] https://quotes.toscrape.com/author/Albert-Einstein
-2026-05-09 23:17:23,611 DEBUG src.crawler: Throttling for 5.99s
-2026-05-09 23:17:29,600 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Alexandre-Dumas-fils
-2026-05-09 23:17:29,924 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Alexandre-Dumas-fils HTTP/1.1" 308 297
-2026-05-09 23:17:29,928 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:17:30,864 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Alexandre-Dumas-fils/ HTTP/1.1" 200 4281
-2026-05-09 23:17:30,866 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Alexandre-Dumas-fils (495 tokens)
-2026-05-09 23:17:30,879 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (12 docs, 1266 terms)
-  indexed [12] https://quotes.toscrape.com/author/Alexandre-Dumas-fils
-2026-05-09 23:17:30,879 DEBUG src.crawler: Throttling for 5.99s
-2026-05-09 23:17:36,868 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Alfred-Tennyson
-2026-05-09 23:17:37,191 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Alfred-Tennyson HTTP/1.1" 308 287
-2026-05-09 23:17:37,195 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:17:38,116 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Alfred-Tennyson/ HTTP/1.1" 200 2932
-2026-05-09 23:17:38,119 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Alfred-Tennyson (280 tokens)
-2026-05-09 23:17:38,140 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (13 docs, 1350 terms)
-  indexed [13] https://quotes.toscrape.com/author/Alfred-Tennyson
-2026-05-09 23:17:38,140 DEBUG src.crawler: Throttling for 5.98s
-2026-05-09 23:17:44,122 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Allen-Saunders
-2026-05-09 23:17:44,449 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Allen-Saunders HTTP/1.1" 308 285
-2026-05-09 23:17:44,451 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:17:45,095 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Allen-Saunders/ HTTP/1.1" 200 3088
-2026-05-09 23:17:45,096 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Allen-Saunders (300 tokens)
-2026-05-09 23:17:45,112 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (14 docs, 1455 terms)
-  indexed [14] https://quotes.toscrape.com/author/Allen-Saunders
-2026-05-09 23:17:45,112 DEBUG src.crawler: Throttling for 5.98s
-2026-05-09 23:17:51,097 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Andre-Gide
-2026-05-09 23:17:51,441 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Andre-Gide HTTP/1.1" 308 277
-2026-05-09 23:17:51,444 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:17:52,125 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Andre-Gide/ HTTP/1.1" 200 2421
-2026-05-09 23:17:52,128 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Andre-Gide (185 tokens)
-2026-05-09 23:17:52,144 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (15 docs, 1513 terms)
-  indexed [15] https://quotes.toscrape.com/author/Andre-Gide
-2026-05-09 23:17:52,144 DEBUG src.crawler: Throttling for 5.98s
-2026-05-09 23:17:58,131 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Ayn-Rand
-2026-05-09 23:17:58,460 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Ayn-Rand HTTP/1.1" 308 273
-2026-05-09 23:17:58,465 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:17:59,399 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Ayn-Rand/ HTTP/1.1" 200 3125
-2026-05-09 23:17:59,401 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Ayn-Rand (294 tokens)
-2026-05-09 23:17:59,418 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (16 docs, 1618 terms)
-  indexed [16] https://quotes.toscrape.com/author/Ayn-Rand
-2026-05-09 23:17:59,418 DEBUG src.crawler: Throttling for 5.98s
-2026-05-09 23:18:05,403 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Bob-Marley
-2026-05-09 23:18:05,735 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Bob-Marley HTTP/1.1" 308 277
-2026-05-09 23:18:05,742 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:18:06,410 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Bob-Marley/ HTTP/1.1" 200 2374
-2026-05-09 23:18:06,412 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Bob-Marley (161 tokens)
-2026-05-09 23:18:06,434 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (17 docs, 1679 terms)
-  indexed [17] https://quotes.toscrape.com/author/Bob-Marley
-2026-05-09 23:18:06,434 DEBUG src.crawler: Throttling for 5.98s
-2026-05-09 23:18:12,415 INFO src.crawler: Fetching https://quotes.toscrape.com/author/C-S-Lewis
-2026-05-09 23:18:12,737 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/C-S-Lewis HTTP/1.1" 308 275
-2026-05-09 23:18:12,743 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:18:13,404 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/C-S-Lewis/ HTTP/1.1" 200 2283
-2026-05-09 23:18:13,408 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/C-S-Lewis (161 tokens)
-2026-05-09 23:18:13,450 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (18 docs, 1727 terms)
-  indexed [18] https://quotes.toscrape.com/author/C-S-Lewis
-2026-05-09 23:18:13,450 DEBUG src.crawler: Throttling for 5.96s
-2026-05-09 23:18:19,411 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Charles-Bukowski
-2026-05-09 23:18:19,751 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Charles-Bukowski HTTP/1.1" 308 289
-2026-05-09 23:18:19,754 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:18:20,677 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Charles-Bukowski/ HTTP/1.1" 200 3212
-2026-05-09 23:18:20,679 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Charles-Bukowski (335 tokens)
-2026-05-09 23:18:20,698 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (19 docs, 1816 terms)
-  indexed [19] https://quotes.toscrape.com/author/Charles-Bukowski
-2026-05-09 23:18:20,698 DEBUG src.crawler: Throttling for 5.98s
-2026-05-09 23:18:26,683 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Charles-M-Schulz
-2026-05-09 23:18:27,008 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Charles-M-Schulz HTTP/1.1" 308 289
-2026-05-09 23:18:27,014 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:18:27,665 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Charles-M-Schulz/ HTTP/1.1" 200 5092
-2026-05-09 23:18:27,670 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Charles-M-Schulz (643 tokens)
-2026-05-09 23:18:27,696 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (20 docs, 1969 terms)
-  indexed [20] https://quotes.toscrape.com/author/Charles-M-Schulz
-2026-05-09 23:18:27,696 DEBUG src.crawler: Throttling for 5.97s
-2026-05-09 23:18:33,671 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Douglas-Adams
-2026-05-09 23:18:33,992 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Douglas-Adams HTTP/1.1" 308 283
-2026-05-09 23:18:33,997 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:18:34,662 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Douglas-Adams/ HTTP/1.1" 200 3066
-2026-05-09 23:18:34,666 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Douglas-Adams (296 tokens)
-2026-05-09 23:18:34,694 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (21 docs, 2029 terms)
-  indexed [21] https://quotes.toscrape.com/author/Douglas-Adams
-2026-05-09 23:18:34,694 DEBUG src.crawler: Throttling for 5.97s
-2026-05-09 23:18:40,668 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Dr-Seuss
-2026-05-09 23:18:41,002 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Dr-Seuss HTTP/1.1" 308 273
-2026-05-09 23:18:41,009 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:18:42,054 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Dr-Seuss/ HTTP/1.1" 200 3835
-2026-05-09 23:18:42,059 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Dr-Seuss (446 tokens)
-2026-05-09 23:18:42,102 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (22 docs, 2143 terms)
-  indexed [22] https://quotes.toscrape.com/author/Dr-Seuss
-2026-05-09 23:18:42,102 DEBUG src.crawler: Throttling for 5.95s
-2026-05-09 23:18:48,061 INFO src.crawler: Fetching https://quotes.toscrape.com/author/E-E-Cummings
-2026-05-09 23:18:48,399 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/E-E-Cummings HTTP/1.1" 308 281
-2026-05-09 23:18:48,405 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:18:49,089 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/E-E-Cummings/ HTTP/1.1" 200 4221
-2026-05-09 23:18:49,093 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/E-E-Cummings (470 tokens)
-2026-05-09 23:18:49,137 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (23 docs, 2270 terms)
-  indexed [23] https://quotes.toscrape.com/author/E-E-Cummings
-2026-05-09 23:18:49,138 DEBUG src.crawler: Throttling for 5.95s
-2026-05-09 23:18:55,095 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Eleanor-Roosevelt
-2026-05-09 23:18:55,416 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Eleanor-Roosevelt HTTP/1.1" 308 291
-2026-05-09 23:18:55,422 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:18:56,287 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Eleanor-Roosevelt/ HTTP/1.1" 200 2783
-2026-05-09 23:18:56,291 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Eleanor-Roosevelt (253 tokens)
-2026-05-09 23:18:56,338 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (24 docs, 2309 terms)
-  indexed [24] https://quotes.toscrape.com/author/Eleanor-Roosevelt
-2026-05-09 23:18:56,338 DEBUG src.crawler: Throttling for 5.95s
-2026-05-09 23:19:02,293 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Elie-Wiesel
-2026-05-09 23:19:02,615 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Elie-Wiesel HTTP/1.1" 308 279
-2026-05-09 23:19:02,619 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:19:03,280 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Elie-Wiesel/ HTTP/1.1" 200 2419
-2026-05-09 23:19:03,283 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Elie-Wiesel (177 tokens)
-2026-05-09 23:19:03,332 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (25 docs, 2347 terms)
-  indexed [25] https://quotes.toscrape.com/author/Elie-Wiesel
-2026-05-09 23:19:03,332 DEBUG src.crawler: Throttling for 5.95s
-2026-05-09 23:19:09,281 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Ernest-Hemingway
-2026-05-09 23:19:09,611 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Ernest-Hemingway HTTP/1.1" 308 289
-2026-05-09 23:19:09,615 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:19:10,298 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Ernest-Hemingway/ HTTP/1.1" 200 3552
-2026-05-09 23:19:10,308 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Ernest-Hemingway (383 tokens)
-2026-05-09 23:19:10,350 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (26 docs, 2427 terms)
-  indexed [26] https://quotes.toscrape.com/author/Ernest-Hemingway
-2026-05-09 23:19:10,350 DEBUG src.crawler: Throttling for 5.95s
-2026-05-09 23:19:16,299 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Friedrich-Nietzsche
-2026-05-09 23:19:16,626 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Friedrich-Nietzsche HTTP/1.1" 308 295
-2026-05-09 23:19:16,631 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:19:17,295 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Friedrich-Nietzsche/ HTTP/1.1" 200 2427
-2026-05-09 23:19:17,299 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Friedrich-Nietzsche (167 tokens)
-2026-05-09 23:19:17,349 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (27 docs, 2475 terms)
-  indexed [27] https://quotes.toscrape.com/author/Friedrich-Nietzsche
-2026-05-09 23:19:17,349 DEBUG src.crawler: Throttling for 5.95s
-2026-05-09 23:19:23,301 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Garrison-Keillor
-2026-05-09 23:19:23,623 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Garrison-Keillor HTTP/1.1" 308 289
-2026-05-09 23:19:23,629 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:19:24,480 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Garrison-Keillor/ HTTP/1.1" 200 5301
-2026-05-09 23:19:24,484 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Garrison-Keillor (650 tokens)
-2026-05-09 23:19:24,535 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (28 docs, 2631 terms)
-  indexed [28] https://quotes.toscrape.com/author/Garrison-Keillor
-2026-05-09 23:19:24,535 DEBUG src.crawler: Throttling for 5.95s
-2026-05-09 23:19:30,486 INFO src.crawler: Fetching https://quotes.toscrape.com/author/George-Bernard-Shaw
-2026-05-09 23:19:30,831 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/George-Bernard-Shaw HTTP/1.1" 308 295
-2026-05-09 23:19:30,837 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:19:31,762 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/George-Bernard-Shaw/ HTTP/1.1" 200 3329
-2026-05-09 23:19:31,767 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/George-Bernard-Shaw (337 tokens)
-2026-05-09 23:19:31,816 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (29 docs, 2715 terms)
-  indexed [29] https://quotes.toscrape.com/author/George-Bernard-Shaw
-2026-05-09 23:19:31,817 DEBUG src.crawler: Throttling for 5.95s
-2026-05-09 23:19:37,768 INFO src.crawler: Fetching https://quotes.toscrape.com/author/George-Carlin
-2026-05-09 23:19:38,091 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/George-Carlin HTTP/1.1" 308 283
-2026-05-09 23:19:38,096 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:19:39,100 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/George-Carlin/ HTTP/1.1" 200 2524
-2026-05-09 23:19:39,105 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/George-Carlin (207 tokens)
-2026-05-09 23:19:39,157 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (30 docs, 2761 terms)
-  indexed [30] https://quotes.toscrape.com/author/George-Carlin
-2026-05-09 23:19:39,157 DEBUG src.crawler: Throttling for 5.94s
-2026-05-09 23:19:45,106 INFO src.crawler: Fetching https://quotes.toscrape.com/author/George-Eliot
-2026-05-09 23:19:45,435 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/George-Eliot HTTP/1.1" 308 281
-2026-05-09 23:19:45,442 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:19:46,177 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/George-Eliot/ HTTP/1.1" 200 4012
-2026-05-09 23:19:46,182 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/George-Eliot (425 tokens)
-2026-05-09 23:19:46,236 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (31 docs, 2869 terms)
-  indexed [31] https://quotes.toscrape.com/author/George-Eliot
-2026-05-09 23:19:46,236 DEBUG src.crawler: Throttling for 5.94s
-2026-05-09 23:19:52,183 INFO src.crawler: Fetching https://quotes.toscrape.com/author/George-R-R-Martin
-2026-05-09 23:19:52,613 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/George-R-R-Martin HTTP/1.1" 308 291
-2026-05-09 23:19:52,617 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:19:53,637 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/George-R-R-Martin/ HTTP/1.1" 200 3677
-2026-05-09 23:19:53,642 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/George-R-R-Martin (391 tokens)
-2026-05-09 23:19:53,694 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (32 docs, 2949 terms)
-  indexed [32] https://quotes.toscrape.com/author/George-R-R-Martin
-2026-05-09 23:19:53,694 DEBUG src.crawler: Throttling for 5.94s
-2026-05-09 23:19:59,643 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Harper-Lee
-2026-05-09 23:19:59,965 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Harper-Lee HTTP/1.1" 308 277
-2026-05-09 23:19:59,972 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:20:00,931 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Harper-Lee/ HTTP/1.1" 200 3450
-2026-05-09 23:20:00,934 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Harper-Lee (372 tokens)
-2026-05-09 23:20:00,992 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (33 docs, 3025 terms)
-  indexed [33] https://quotes.toscrape.com/author/Harper-Lee
-2026-05-09 23:20:00,992 DEBUG src.crawler: Throttling for 5.94s
-2026-05-09 23:20:06,937 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Haruki-Murakami
-2026-05-09 23:20:07,258 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Haruki-Murakami HTTP/1.1" 308 287
-2026-05-09 23:20:07,264 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:20:08,172 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Haruki-Murakami/ HTTP/1.1" 200 3029
-2026-05-09 23:20:08,173 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Haruki-Murakami (283 tokens)
-2026-05-09 23:20:08,207 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (34 docs, 3083 terms)
-  indexed [34] https://quotes.toscrape.com/author/Haruki-Murakami
-2026-05-09 23:20:08,207 DEBUG src.crawler: Throttling for 5.97s
-2026-05-09 23:20:14,179 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Helen-Keller
-2026-05-09 23:20:14,517 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Helen-Keller HTTP/1.1" 308 281
-2026-05-09 23:20:14,521 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:20:15,448 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Helen-Keller/ HTTP/1.1" 200 4143
-2026-05-09 23:20:15,451 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Helen-Keller (491 tokens)
-2026-05-09 23:20:15,492 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (35 docs, 3186 terms)
-  indexed [35] https://quotes.toscrape.com/author/Helen-Keller
-2026-05-09 23:20:15,492 DEBUG src.crawler: Throttling for 5.96s
-2026-05-09 23:20:21,454 INFO src.crawler: Fetching https://quotes.toscrape.com/author/J-D-Salinger
-2026-05-09 23:20:21,896 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/J-D-Salinger HTTP/1.1" 308 281
-2026-05-09 23:20:21,901 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:20:22,807 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/J-D-Salinger/ HTTP/1.1" 200 3603
-2026-05-09 23:20:22,809 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/J-D-Salinger (375 tokens)
-2026-05-09 23:20:22,862 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (36 docs, 3253 terms)
-  indexed [36] https://quotes.toscrape.com/author/J-D-Salinger
-2026-05-09 23:20:22,862 DEBUG src.crawler: Throttling for 5.95s
-2026-05-09 23:20:28,812 INFO src.crawler: Fetching https://quotes.toscrape.com/author/J-K-Rowling
-2026-05-09 23:20:29,151 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/J-K-Rowling HTTP/1.1" 308 279
-2026-05-09 23:20:29,159 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:20:29,873 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/J-K-Rowling/ HTTP/1.1" 200 5354
-2026-05-09 23:20:29,879 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/J-K-Rowling (675 tokens)
-2026-05-09 23:20:29,947 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (37 docs, 3371 terms)
-  indexed [37] https://quotes.toscrape.com/author/J-K-Rowling
-2026-05-09 23:20:29,948 DEBUG src.crawler: Throttling for 5.93s
-2026-05-09 23:20:35,879 INFO src.crawler: Fetching https://quotes.toscrape.com/author/J-M-Barrie
-2026-05-09 23:20:36,212 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/J-M-Barrie HTTP/1.1" 308 277
-2026-05-09 23:20:36,214 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:20:37,136 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/J-M-Barrie/ HTTP/1.1" 200 2556
-2026-05-09 23:20:37,140 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/J-M-Barrie (215 tokens)
-2026-05-09 23:20:37,203 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (38 docs, 3407 terms)
-  indexed [38] https://quotes.toscrape.com/author/J-M-Barrie
-2026-05-09 23:20:37,203 DEBUG src.crawler: Throttling for 5.93s
-2026-05-09 23:20:43,142 INFO src.crawler: Fetching https://quotes.toscrape.com/author/J-R-R-Tolkien
-2026-05-09 23:20:43,472 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/J-R-R-Tolkien HTTP/1.1" 308 283
-2026-05-09 23:20:43,477 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:20:44,414 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/J-R-R-Tolkien/ HTTP/1.1" 200 4549
-2026-05-09 23:20:44,420 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/J-R-R-Tolkien (519 tokens)
-2026-05-09 23:20:44,496 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (39 docs, 3498 terms)
-  indexed [39] https://quotes.toscrape.com/author/J-R-R-Tolkien
-2026-05-09 23:20:44,496 DEBUG src.crawler: Throttling for 5.92s
-2026-05-09 23:20:50,420 INFO src.crawler: Fetching https://quotes.toscrape.com/author/James-Baldwin
-2026-05-09 23:20:50,761 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/James-Baldwin HTTP/1.1" 308 283
-2026-05-09 23:20:50,765 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:20:51,717 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/James-Baldwin/ HTTP/1.1" 200 3421
-2026-05-09 23:20:51,722 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/James-Baldwin (350 tokens)
-2026-05-09 23:20:51,785 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (40 docs, 3564 terms)
-  indexed [40] https://quotes.toscrape.com/author/James-Baldwin
-2026-05-09 23:20:51,785 DEBUG src.crawler: Throttling for 5.93s
-2026-05-09 23:20:57,723 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Jane-Austen
-2026-05-09 23:20:58,059 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Jane-Austen HTTP/1.1" 308 279
-2026-05-09 23:20:58,065 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:20:58,772 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Jane-Austen/ HTTP/1.1" 200 3415
-2026-05-09 23:20:58,777 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Jane-Austen (346 tokens)
-2026-05-09 23:20:58,850 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (41 docs, 3620 terms)
-  indexed [41] https://quotes.toscrape.com/author/Jane-Austen
-2026-05-09 23:20:58,850 DEBUG src.crawler: Throttling for 5.92s
-2026-05-09 23:21:04,777 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Jim-Henson
-2026-05-09 23:21:05,121 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Jim-Henson HTTP/1.1" 308 277
-2026-05-09 23:21:05,124 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:21:06,056 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Jim-Henson/ HTTP/1.1" 200 2591
-2026-05-09 23:21:06,060 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Jim-Henson (208 tokens)
-2026-05-09 23:21:06,136 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (42 docs, 3654 terms)
-  indexed [42] https://quotes.toscrape.com/author/Jim-Henson
-2026-05-09 23:21:06,136 DEBUG src.crawler: Throttling for 5.92s
-2026-05-09 23:21:12,062 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Jimi-Hendrix
-2026-05-09 23:21:12,415 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Jimi-Hendrix HTTP/1.1" 308 281
-2026-05-09 23:21:12,420 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:21:13,087 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Jimi-Hendrix/ HTTP/1.1" 200 3088
-2026-05-09 23:21:13,092 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Jimi-Hendrix (297 tokens)
-2026-05-09 23:21:13,165 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (43 docs, 3703 terms)
-  indexed [43] https://quotes.toscrape.com/author/Jimi-Hendrix
-2026-05-09 23:21:13,165 DEBUG src.crawler: Throttling for 5.92s
-2026-05-09 23:21:19,093 INFO src.crawler: Fetching https://quotes.toscrape.com/author/John-Lennon
-2026-05-09 23:21:19,436 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/John-Lennon HTTP/1.1" 308 279
-2026-05-09 23:21:19,438 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:21:20,121 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/John-Lennon/ HTTP/1.1" 200 3452
-2026-05-09 23:21:20,125 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/John-Lennon (367 tokens)
-2026-05-09 23:21:20,200 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (44 docs, 3758 terms)
-  indexed [44] https://quotes.toscrape.com/author/John-Lennon
-2026-05-09 23:21:20,200 DEBUG src.crawler: Throttling for 5.92s
-2026-05-09 23:21:26,127 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Jorge-Luis-Borges
-2026-05-09 23:21:26,465 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Jorge-Luis-Borges HTTP/1.1" 308 291
-2026-05-09 23:21:26,471 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:21:27,159 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Jorge-Luis-Borges/ HTTP/1.1" 200 2688
-2026-05-09 23:21:27,163 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Jorge-Luis-Borges (219 tokens)
-2026-05-09 23:21:27,247 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (45 docs, 3795 terms)
-  indexed [45] https://quotes.toscrape.com/author/Jorge-Luis-Borges
-2026-05-09 23:21:27,247 DEBUG src.crawler: Throttling for 5.91s
-2026-05-09 23:21:33,165 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Khaled-Hosseini
-2026-05-09 23:21:33,511 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Khaled-Hosseini HTTP/1.1" 308 287
-2026-05-09 23:21:33,515 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:21:34,200 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Khaled-Hosseini/ HTTP/1.1" 200 3075
-2026-05-09 23:21:34,201 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Khaled-Hosseini (297 tokens)
-2026-05-09 23:21:34,243 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (46 docs, 3842 terms)
-  indexed [46] https://quotes.toscrape.com/author/Khaled-Hosseini
-2026-05-09 23:21:34,243 DEBUG src.crawler: Throttling for 5.96s
-2026-05-09 23:21:40,201 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Madeleine-LEngle
-2026-05-09 23:21:40,549 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Madeleine-LEngle HTTP/1.1" 308 289
-2026-05-09 23:21:40,555 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:21:41,248 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Madeleine-LEngle/ HTTP/1.1" 200 4287
-2026-05-09 23:21:41,252 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Madeleine-LEngle (506 tokens)
-2026-05-09 23:21:41,327 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (47 docs, 3907 terms)
-  indexed [47] https://quotes.toscrape.com/author/Madeleine-LEngle
-2026-05-09 23:21:41,327 DEBUG src.crawler: Throttling for 5.92s
-2026-05-09 23:21:47,254 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Marilyn-Monroe
-2026-05-09 23:21:47,596 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Marilyn-Monroe HTTP/1.1" 308 285
-2026-05-09 23:21:47,601 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:21:48,398 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Marilyn-Monroe/ HTTP/1.1" 200 3667
-2026-05-09 23:21:48,404 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Marilyn-Monroe (396 tokens)
-2026-05-09 23:21:48,475 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (48 docs, 3978 terms)
-  indexed [48] https://quotes.toscrape.com/author/Marilyn-Monroe
-2026-05-09 23:21:48,475 DEBUG src.crawler: Throttling for 5.92s
-2026-05-09 23:21:54,405 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Mark-Twain
-2026-05-09 23:21:54,737 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Mark-Twain HTTP/1.1" 308 277
-2026-05-09 23:21:54,741 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:21:55,460 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Mark-Twain/ HTTP/1.1" 200 3294
-2026-05-09 23:21:55,464 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Mark-Twain (322 tokens)
-2026-05-09 23:21:55,543 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (49 docs, 4040 terms)
-  indexed [49] https://quotes.toscrape.com/author/Mark-Twain
-2026-05-09 23:21:55,543 DEBUG src.crawler: Throttling for 5.92s
-2026-05-09 23:22:01,466 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Martin-Luther-King-Jr
-2026-05-09 23:22:01,800 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Martin-Luther-King-Jr HTTP/1.1" 308 299
-2026-05-09 23:22:01,805 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:22:02,540 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Martin-Luther-King-Jr/ HTTP/1.1" 200 2609
-2026-05-09 23:22:02,541 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Martin-Luther-King-Jr (219 tokens)
-2026-05-09 23:22:02,589 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (50 docs, 4069 terms)
-  indexed [50] https://quotes.toscrape.com/author/Martin-Luther-King-Jr
-2026-05-09 23:22:02,589 DEBUG src.crawler: Throttling for 5.95s
-2026-05-09 23:22:08,545 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Mother-Teresa
-2026-05-09 23:22:08,904 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Mother-Teresa HTTP/1.1" 308 283
-2026-05-09 23:22:08,908 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:22:09,573 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Mother-Teresa/ HTTP/1.1" 200 2584
-2026-05-09 23:22:09,575 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Mother-Teresa (206 tokens)
-2026-05-09 23:22:09,633 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (51 docs, 4122 terms)
-  indexed [51] https://quotes.toscrape.com/author/Mother-Teresa
-2026-05-09 23:22:09,633 DEBUG src.crawler: Throttling for 5.94s
-2026-05-09 23:22:15,575 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Pablo-Neruda
-2026-05-09 23:22:15,919 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Pablo-Neruda HTTP/1.1" 308 281
-2026-05-09 23:22:15,922 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:22:16,610 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Pablo-Neruda/ HTTP/1.1" 200 3783
-2026-05-09 23:22:16,612 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Pablo-Neruda (401 tokens)
-2026-05-09 23:22:16,679 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (52 docs, 4203 terms)
-  indexed [52] https://quotes.toscrape.com/author/Pablo-Neruda
-2026-05-09 23:22:16,679 DEBUG src.crawler: Throttling for 5.93s
-2026-05-09 23:22:22,612 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Ralph-Waldo-Emerson
-2026-05-09 23:22:22,959 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Ralph-Waldo-Emerson HTTP/1.1" 308 295
-2026-05-09 23:22:22,962 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:22:23,833 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Ralph-Waldo-Emerson/ HTTP/1.1" 200 4812
-2026-05-09 23:22:23,837 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Ralph-Waldo-Emerson (553 tokens)
-2026-05-09 23:22:23,903 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (53 docs, 4321 terms)
-  indexed [53] https://quotes.toscrape.com/author/Ralph-Waldo-Emerson
-2026-05-09 23:22:23,903 DEBUG src.crawler: Throttling for 5.93s
-2026-05-09 23:22:29,837 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Stephenie-Meyer
-2026-05-09 23:22:30,168 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Stephenie-Meyer HTTP/1.1" 308 287
-2026-05-09 23:22:30,171 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:22:31,025 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Stephenie-Meyer/ HTTP/1.1" 200 3967
-2026-05-09 23:22:31,027 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Stephenie-Meyer (476 tokens)
-2026-05-09 23:22:31,083 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (54 docs, 4391 terms)
-  indexed [54] https://quotes.toscrape.com/author/Stephenie-Meyer
-2026-05-09 23:22:31,083 DEBUG src.crawler: Throttling for 5.94s
-2026-05-09 23:22:37,031 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Steve-Martin
-2026-05-09 23:22:37,801 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Steve-Martin HTTP/1.1" 308 281
-2026-05-09 23:22:37,805 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:22:38,566 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Steve-Martin/ HTTP/1.1" 200 2219
-2026-05-09 23:22:38,567 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Steve-Martin (150 tokens)
-2026-05-09 23:22:38,639 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (55 docs, 4412 terms)
-  indexed [55] https://quotes.toscrape.com/author/Steve-Martin
-2026-05-09 23:22:38,640 DEBUG src.crawler: Throttling for 5.93s
-2026-05-09 23:22:44,568 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Suzanne-Collins
-2026-05-09 23:22:44,953 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Suzanne-Collins HTTP/1.1" 308 287
-2026-05-09 23:22:44,957 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:22:45,669 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Suzanne-Collins/ HTTP/1.1" 200 3035
-2026-05-09 23:22:45,670 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Suzanne-Collins (298 tokens)
-2026-05-09 23:22:45,741 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (56 docs, 4461 terms)
-  indexed [56] https://quotes.toscrape.com/author/Suzanne-Collins
-2026-05-09 23:22:45,741 DEBUG src.crawler: Throttling for 5.93s
-2026-05-09 23:22:51,674 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Terry-Pratchett
-2026-05-09 23:22:52,086 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Terry-Pratchett HTTP/1.1" 308 287
-2026-05-09 23:22:52,090 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:22:52,790 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Terry-Pratchett/ HTTP/1.1" 200 3408
-2026-05-09 23:22:52,793 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Terry-Pratchett (342 tokens)
-2026-05-09 23:22:52,854 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (57 docs, 4513 terms)
-  indexed [57] https://quotes.toscrape.com/author/Terry-Pratchett
-2026-05-09 23:22:52,854 DEBUG src.crawler: Throttling for 5.94s
-2026-05-09 23:22:58,794 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Thomas-A-Edison
-2026-05-09 23:22:59,144 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Thomas-A-Edison HTTP/1.1" 308 287
-2026-05-09 23:22:59,148 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:22:59,885 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Thomas-A-Edison/ HTTP/1.1" 200 2652
-2026-05-09 23:22:59,886 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Thomas-A-Edison (214 tokens)
-2026-05-09 23:22:59,951 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (58 docs, 4550 terms)
-  indexed [58] https://quotes.toscrape.com/author/Thomas-A-Edison
-2026-05-09 23:22:59,951 DEBUG src.crawler: Throttling for 5.93s
-2026-05-09 23:23:05,887 INFO src.crawler: Fetching https://quotes.toscrape.com/author/W-C-Fields
-2026-05-09 23:23:06,244 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/W-C-Fields HTTP/1.1" 308 277
-2026-05-09 23:23:06,247 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:23:07,156 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/W-C-Fields/ HTTP/1.1" 200 2894
-2026-05-09 23:23:07,158 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/W-C-Fields (278 tokens)
-2026-05-09 23:23:07,229 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (59 docs, 4608 terms)
-  indexed [59] https://quotes.toscrape.com/author/W-C-Fields
-2026-05-09 23:23:07,229 DEBUG src.crawler: Throttling for 5.93s
-2026-05-09 23:23:13,160 INFO src.crawler: Fetching https://quotes.toscrape.com/author/William-Nicholson
-2026-05-09 23:23:13,500 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/William-Nicholson HTTP/1.1" 308 291
-2026-05-09 23:23:13,504 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-2026-05-09 23:23:14,203 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/William-Nicholson/ HTTP/1.1" 200 3434
-2026-05-09 23:23:14,205 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/William-Nicholson (371 tokens)
-2026-05-09 23:23:14,279 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (60 docs, 4650 terms)
-  indexed [60] https://quotes.toscrape.com/author/William-Nicholson
-Build complete: 60 new page(s) this run, 60 total in index, 4650 term(s).
+2026-05-10 18:37:26,230 DEBUG src.crawler: Throttling for 5.99s
+2026-05-10 18:37:32,225 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Albert-Einstein
+2026-05-10 18:37:32,522 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Albert-Einstein HTTP/1.1" 308 287
+2026-05-10 18:37:32,527 DEBUG urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7897
+2026-05-10 18:37:33,188 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Albert-Einstein/ HTTP/1.1" 200 5335
+2026-05-10 18:37:33,193 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Albert-Einstein (648 tokens)
+2026-05-10 18:37:33,203 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (2 docs, 448 terms)
+  indexed [2] https://quotes.toscrape.com/author/Albert-Einstein
+2026-05-10 18:37:33,205 DEBUG src.crawler: Throttling for 5.98s
+2026-05-10 18:37:39,195 INFO src.crawler: Fetching https://quotes.toscrape.com/author/J-K-Rowling
+2026-05-10 18:37:39,498 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/J-K-Rowling HTTP/1.1" 308 279
+2026-05-10 18:37:39,503 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:37:40,135 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/J-K-Rowling/ HTTP/1.1" 200 5354
+2026-05-10 18:37:40,137 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/J-K-Rowling (675 tokens)
+2026-05-10 18:37:40,142 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (3 docs, 710 terms)
+  indexed [3] https://quotes.toscrape.com/author/J-K-Rowling
+2026-05-10 18:37:40,144 DEBUG src.crawler: Throttling for 5.99s
+2026-05-10 18:37:46,138 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Jane-Austen
+2026-05-10 18:37:46,435 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Jane-Austen HTTP/1.1" 308 279
+2026-05-10 18:37:46,438 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:37:47,079 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Jane-Austen/ HTTP/1.1" 200 3415
+2026-05-10 18:37:47,080 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Jane-Austen (346 tokens)
+2026-05-10 18:37:47,088 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (4 docs, 841 terms)
+  indexed [4] https://quotes.toscrape.com/author/Jane-Austen
+2026-05-10 18:37:47,089 DEBUG src.crawler: Throttling for 5.99s
+2026-05-10 18:37:53,080 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Marilyn-Monroe
+2026-05-10 18:37:53,378 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Marilyn-Monroe HTTP/1.1" 308 285
+2026-05-10 18:37:53,382 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:37:54,012 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Marilyn-Monroe/ HTTP/1.1" 200 3667
+2026-05-10 18:37:54,013 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Marilyn-Monroe (396 tokens)
+2026-05-10 18:37:54,021 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (5 docs, 987 terms)
+  indexed [5] https://quotes.toscrape.com/author/Marilyn-Monroe
+2026-05-10 18:37:54,022 DEBUG src.crawler: Throttling for 5.99s
+2026-05-10 18:38:00,012 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Andre-Gide
+2026-05-10 18:38:00,320 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Andre-Gide HTTP/1.1" 308 277
+2026-05-10 18:38:00,323 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:38:00,977 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Andre-Gide/ HTTP/1.1" 200 2421
+2026-05-10 18:38:00,978 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Andre-Gide (185 tokens)
+2026-05-10 18:38:00,988 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (6 docs, 1056 terms)
+  indexed [6] https://quotes.toscrape.com/author/Andre-Gide
+2026-05-10 18:38:00,989 DEBUG src.crawler: Throttling for 5.99s
+2026-05-10 18:38:06,980 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Thomas-A-Edison
+2026-05-10 18:38:07,284 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Thomas-A-Edison HTTP/1.1" 308 287
+2026-05-10 18:38:07,287 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:38:07,928 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Thomas-A-Edison/ HTTP/1.1" 200 2652
+2026-05-10 18:38:07,932 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Thomas-A-Edison (214 tokens)
+2026-05-10 18:38:07,949 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (7 docs, 1121 terms)
+  indexed [7] https://quotes.toscrape.com/author/Thomas-A-Edison
+2026-05-10 18:38:07,950 DEBUG src.crawler: Throttling for 5.98s
+2026-05-10 18:38:13,934 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Eleanor-Roosevelt
+2026-05-10 18:38:14,232 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Eleanor-Roosevelt HTTP/1.1" 308 291
+2026-05-10 18:38:14,234 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:38:14,833 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Eleanor-Roosevelt/ HTTP/1.1" 200 2783
+2026-05-10 18:38:14,835 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Eleanor-Roosevelt (253 tokens)
+2026-05-10 18:38:14,849 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (8 docs, 1175 terms)
+  indexed [8] https://quotes.toscrape.com/author/Eleanor-Roosevelt
+2026-05-10 18:38:14,850 DEBUG src.crawler: Throttling for 5.98s
+2026-05-10 18:38:20,839 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Steve-Martin
+2026-05-10 18:38:21,155 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Steve-Martin HTTP/1.1" 308 281
+2026-05-10 18:38:21,160 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:38:21,778 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Steve-Martin/ HTTP/1.1" 200 2219
+2026-05-10 18:38:21,783 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Steve-Martin (150 tokens)
+2026-05-10 18:38:21,793 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (9 docs, 1225 terms)
+  indexed [9] https://quotes.toscrape.com/author/Steve-Martin
+2026-05-10 18:38:21,794 DEBUG src.crawler: Throttling for 5.98s
+2026-05-10 18:38:27,780 INFO src.crawler: Fetching https://quotes.toscrape.com/page/2/
+2026-05-10 18:38:28,082 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/2/ HTTP/1.1" 200 13745
+2026-05-10 18:38:28,268 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/2/ (618 tokens)
+2026-05-10 18:38:28,285 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (10 docs, 1354 terms)
+  indexed [10] https://quotes.toscrape.com/page/2/
+2026-05-10 18:38:28,290 DEBUG src.crawler: Throttling for 5.97s
+2026-05-10 18:38:34,288 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Bob-Marley
+2026-05-10 18:38:34,619 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Bob-Marley HTTP/1.1" 308 277
+2026-05-10 18:38:34,621 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:38:35,276 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Bob-Marley/ HTTP/1.1" 200 2374
+2026-05-10 18:38:35,287 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Bob-Marley (161 tokens)
+2026-05-10 18:38:35,308 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (11 docs, 1408 terms)
+  indexed [11] https://quotes.toscrape.com/author/Bob-Marley
+2026-05-10 18:38:35,311 DEBUG src.crawler: Throttling for 5.97s
+2026-05-10 18:38:41,284 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Dr-Seuss
+2026-05-10 18:38:41,592 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Dr-Seuss HTTP/1.1" 308 273
+2026-05-10 18:38:41,597 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:38:42,380 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Dr-Seuss/ HTTP/1.1" 200 3835
+2026-05-10 18:38:42,382 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Dr-Seuss (446 tokens)
+2026-05-10 18:38:42,398 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (12 docs, 1540 terms)
+  indexed [12] https://quotes.toscrape.com/author/Dr-Seuss
+2026-05-10 18:38:42,399 DEBUG src.crawler: Throttling for 5.98s
+2026-05-10 18:38:48,384 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Douglas-Adams
+2026-05-10 18:38:48,686 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Douglas-Adams HTTP/1.1" 308 283
+2026-05-10 18:38:48,690 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:38:49,293 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Douglas-Adams/ HTTP/1.1" 200 3066
+2026-05-10 18:38:49,294 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Douglas-Adams (296 tokens)
+2026-05-10 18:38:49,306 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (13 docs, 1605 terms)
+  indexed [13] https://quotes.toscrape.com/author/Douglas-Adams
+2026-05-10 18:38:49,307 DEBUG src.crawler: Throttling for 5.99s
+2026-05-10 18:38:55,299 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Elie-Wiesel
+2026-05-10 18:38:55,604 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Elie-Wiesel HTTP/1.1" 308 279
+2026-05-10 18:38:55,608 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:38:56,231 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Elie-Wiesel/ HTTP/1.1" 200 2419
+2026-05-10 18:38:56,236 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Elie-Wiesel (177 tokens)
+2026-05-10 18:38:56,263 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (14 docs, 1648 terms)
+  indexed [14] https://quotes.toscrape.com/author/Elie-Wiesel
+2026-05-10 18:38:56,264 DEBUG src.crawler: Throttling for 5.97s
+2026-05-10 18:39:02,237 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Friedrich-Nietzsche
+2026-05-10 18:39:02,538 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Friedrich-Nietzsche HTTP/1.1" 308 295
+2026-05-10 18:39:02,544 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:39:03,188 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Friedrich-Nietzsche/ HTTP/1.1" 200 2427
+2026-05-10 18:39:03,192 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Friedrich-Nietzsche (167 tokens)
+2026-05-10 18:39:03,217 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (15 docs, 1706 terms)
+  indexed [15] https://quotes.toscrape.com/author/Friedrich-Nietzsche
+2026-05-10 18:39:03,218 DEBUG src.crawler: Throttling for 5.97s
+2026-05-10 18:39:09,194 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Mark-Twain
+2026-05-10 18:39:09,516 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Mark-Twain HTTP/1.1" 308 277
+2026-05-10 18:39:09,521 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:39:10,140 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Mark-Twain/ HTTP/1.1" 200 3294
+2026-05-10 18:39:10,143 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Mark-Twain (322 tokens)
+2026-05-10 18:39:10,168 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (16 docs, 1793 terms)
+  indexed [16] https://quotes.toscrape.com/author/Mark-Twain
+2026-05-10 18:39:10,169 DEBUG src.crawler: Throttling for 5.97s
+2026-05-10 18:39:16,145 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Allen-Saunders
+2026-05-10 18:39:16,445 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Allen-Saunders HTTP/1.1" 308 285
+2026-05-10 18:39:16,451 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:39:17,093 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Allen-Saunders/ HTTP/1.1" 200 3088
+2026-05-10 18:39:17,097 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Allen-Saunders (300 tokens)
+2026-05-10 18:39:17,132 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (17 docs, 1879 terms)
+  indexed [17] https://quotes.toscrape.com/author/Allen-Saunders
+2026-05-10 18:39:17,133 DEBUG src.crawler: Throttling for 5.96s
+2026-05-10 18:39:23,099 INFO src.crawler: Fetching https://quotes.toscrape.com/page/3/
+2026-05-10 18:39:23,399 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/3/ HTTP/1.1" 200 10029
+2026-05-10 18:39:23,412 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/3/ (339 tokens)
+2026-05-10 18:39:23,443 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (18 docs, 1936 terms)
+  indexed [18] https://quotes.toscrape.com/page/3/
+2026-05-10 18:39:23,453 DEBUG src.crawler: Throttling for 5.95s
+2026-05-10 18:39:29,402 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Pablo-Neruda
+2026-05-10 18:39:29,701 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Pablo-Neruda HTTP/1.1" 308 281
+2026-05-10 18:39:29,704 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:39:30,349 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Pablo-Neruda/ HTTP/1.1" 200 3783
+2026-05-10 18:39:30,353 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Pablo-Neruda (401 tokens)
+2026-05-10 18:39:30,390 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (19 docs, 2051 terms)
+  indexed [19] https://quotes.toscrape.com/author/Pablo-Neruda
+2026-05-10 18:39:30,391 DEBUG src.crawler: Throttling for 5.96s
+2026-05-10 18:39:36,355 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Ralph-Waldo-Emerson
+2026-05-10 18:39:36,656 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Ralph-Waldo-Emerson HTTP/1.1" 308 295
+2026-05-10 18:39:36,658 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:39:37,294 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Ralph-Waldo-Emerson/ HTTP/1.1" 200 4812
+2026-05-10 18:39:37,298 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Ralph-Waldo-Emerson (553 tokens)
+2026-05-10 18:39:37,337 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (20 docs, 2210 terms)
+  indexed [20] https://quotes.toscrape.com/author/Ralph-Waldo-Emerson
+2026-05-10 18:39:37,338 DEBUG src.crawler: Throttling for 5.96s
+2026-05-10 18:39:43,300 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Mother-Teresa
+2026-05-10 18:39:43,599 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Mother-Teresa HTTP/1.1" 308 283
+2026-05-10 18:39:43,604 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:39:44,199 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Mother-Teresa/ HTTP/1.1" 200 2584
+2026-05-10 18:39:44,200 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Mother-Teresa (206 tokens)
+2026-05-10 18:39:44,220 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (21 docs, 2277 terms)
+  indexed [21] https://quotes.toscrape.com/author/Mother-Teresa
+2026-05-10 18:39:44,221 DEBUG src.crawler: Throttling for 5.98s
+2026-05-10 18:39:50,204 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Garrison-Keillor
+2026-05-10 18:39:50,505 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Garrison-Keillor HTTP/1.1" 308 289
+2026-05-10 18:39:50,510 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:39:51,110 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Garrison-Keillor/ HTTP/1.1" 200 5301
+2026-05-10 18:39:51,111 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Garrison-Keillor (650 tokens)
+2026-05-10 18:39:51,132 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (22 docs, 2439 terms)
+  indexed [22] https://quotes.toscrape.com/author/Garrison-Keillor
+2026-05-10 18:39:51,132 DEBUG src.crawler: Throttling for 5.98s
+2026-05-10 18:39:57,110 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Jim-Henson
+2026-05-10 18:39:57,412 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Jim-Henson HTTP/1.1" 308 277
+2026-05-10 18:39:57,418 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:39:58,018 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Jim-Henson/ HTTP/1.1" 200 2591
+2026-05-10 18:39:58,022 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Jim-Henson (208 tokens)
+2026-05-10 18:39:58,068 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (23 docs, 2483 terms)
+  indexed [23] https://quotes.toscrape.com/author/Jim-Henson
+2026-05-10 18:39:58,069 DEBUG src.crawler: Throttling for 5.95s
+2026-05-10 18:40:04,025 INFO src.crawler: Fetching https://quotes.toscrape.com/page/4/
+2026-05-10 18:40:04,329 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/4/ HTTP/1.1" 200 10325
+2026-05-10 18:40:04,340 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/4/ (256 tokens)
+2026-05-10 18:40:04,380 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (24 docs, 2515 terms)
+  indexed [24] https://quotes.toscrape.com/page/4/
+2026-05-10 18:40:04,384 DEBUG src.crawler: Throttling for 5.95s
+2026-05-10 18:40:10,332 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Charles-M-Schulz
+2026-05-10 18:40:10,631 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Charles-M-Schulz HTTP/1.1" 308 289
+2026-05-10 18:40:10,637 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:40:11,233 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Charles-M-Schulz/ HTTP/1.1" 200 5092
+2026-05-10 18:40:11,244 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Charles-M-Schulz (643 tokens)
+2026-05-10 18:40:11,278 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (25 docs, 2634 terms)
+  indexed [25] https://quotes.toscrape.com/author/Charles-M-Schulz
+2026-05-10 18:40:11,278 DEBUG src.crawler: Throttling for 5.96s
+2026-05-10 18:40:17,238 INFO src.crawler: Fetching https://quotes.toscrape.com/author/William-Nicholson
+2026-05-10 18:40:17,538 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/William-Nicholson HTTP/1.1" 308 291
+2026-05-10 18:40:17,543 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:40:18,203 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/William-Nicholson/ HTTP/1.1" 200 3434
+2026-05-10 18:40:18,205 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/William-Nicholson (371 tokens)
+2026-05-10 18:40:18,238 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (26 docs, 2697 terms)
+  indexed [26] https://quotes.toscrape.com/author/William-Nicholson
+2026-05-10 18:40:18,238 DEBUG src.crawler: Throttling for 5.97s
+2026-05-10 18:40:24,209 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Jorge-Luis-Borges
+2026-05-10 18:40:24,506 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Jorge-Luis-Borges HTTP/1.1" 308 291
+2026-05-10 18:40:24,508 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:40:25,156 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Jorge-Luis-Borges/ HTTP/1.1" 200 2688
+2026-05-10 18:40:25,157 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Jorge-Luis-Borges (219 tokens)
+2026-05-10 18:40:25,190 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (27 docs, 2738 terms)
+  indexed [27] https://quotes.toscrape.com/author/Jorge-Luis-Borges
+2026-05-10 18:40:25,190 DEBUG src.crawler: Throttling for 5.97s
+2026-05-10 18:40:31,157 INFO src.crawler: Fetching https://quotes.toscrape.com/author/George-Eliot
+2026-05-10 18:40:31,456 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/George-Eliot HTTP/1.1" 308 281
+2026-05-10 18:40:31,459 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:40:32,045 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/George-Eliot/ HTTP/1.1" 200 4012
+2026-05-10 18:40:32,054 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/George-Eliot (425 tokens)
+2026-05-10 18:40:32,102 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (28 docs, 2839 terms)
+  indexed [28] https://quotes.toscrape.com/author/George-Eliot
+2026-05-10 18:40:32,103 DEBUG src.crawler: Throttling for 5.94s
+2026-05-10 18:40:38,047 INFO src.crawler: Fetching https://quotes.toscrape.com/page/5/
+2026-05-10 18:40:38,347 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/5/ HTTP/1.1" 200 10012
+2026-05-10 18:40:38,352 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/5/ (273 tokens)
+2026-05-10 18:40:38,384 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (29 docs, 2874 terms)
+  indexed [29] https://quotes.toscrape.com/page/5/
+2026-05-10 18:40:38,388 DEBUG src.crawler: Throttling for 5.96s
+2026-05-10 18:40:44,348 INFO src.crawler: Fetching https://quotes.toscrape.com/author/George-R-R-Martin
+2026-05-10 18:40:44,648 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/George-R-R-Martin HTTP/1.1" 308 291
+2026-05-10 18:40:44,653 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:40:45,258 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/George-R-R-Martin/ HTTP/1.1" 200 3677
+2026-05-10 18:40:45,263 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/George-R-R-Martin (391 tokens)
+2026-05-10 18:40:45,303 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (30 docs, 2954 terms)
+  indexed [30] https://quotes.toscrape.com/author/George-R-R-Martin
+2026-05-10 18:40:45,304 DEBUG src.crawler: Throttling for 5.96s
+2026-05-10 18:40:51,264 INFO src.crawler: Fetching https://quotes.toscrape.com/author/C-S-Lewis
+2026-05-10 18:40:51,564 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/C-S-Lewis HTTP/1.1" 308 275
+2026-05-10 18:40:51,568 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:40:52,167 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/C-S-Lewis/ HTTP/1.1" 200 2283
+2026-05-10 18:40:52,168 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/C-S-Lewis (161 tokens)
+2026-05-10 18:40:52,195 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (31 docs, 2987 terms)
+  indexed [31] https://quotes.toscrape.com/author/C-S-Lewis
+2026-05-10 18:40:52,196 DEBUG src.crawler: Throttling for 5.97s
+2026-05-10 18:40:58,174 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Martin-Luther-King-Jr
+2026-05-10 18:40:58,477 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Martin-Luther-King-Jr HTTP/1.1" 308 299
+2026-05-10 18:40:58,483 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:40:59,121 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Martin-Luther-King-Jr/ HTTP/1.1" 200 2609
+2026-05-10 18:40:59,127 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Martin-Luther-King-Jr (219 tokens)
+2026-05-10 18:40:59,177 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (32 docs, 3023 terms)
+  indexed [32] https://quotes.toscrape.com/author/Martin-Luther-King-Jr
+2026-05-10 18:40:59,178 DEBUG src.crawler: Throttling for 5.94s
+2026-05-10 18:41:05,127 INFO src.crawler: Fetching https://quotes.toscrape.com/author/James-Baldwin
+2026-05-10 18:41:05,427 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/James-Baldwin HTTP/1.1" 308 283
+2026-05-10 18:41:05,432 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:41:06,078 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/James-Baldwin/ HTTP/1.1" 200 3421
+2026-05-10 18:41:06,082 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/James-Baldwin (350 tokens)
+2026-05-10 18:41:06,138 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (33 docs, 3090 terms)
+  indexed [33] https://quotes.toscrape.com/author/James-Baldwin
+2026-05-10 18:41:06,139 DEBUG src.crawler: Throttling for 5.94s
+2026-05-10 18:41:12,084 INFO src.crawler: Fetching https://quotes.toscrape.com/page/6/
+2026-05-10 18:41:12,385 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/6/ HTTP/1.1" 200 10416
+2026-05-10 18:41:12,399 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/6/ (294 tokens)
+2026-05-10 18:41:12,460 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (34 docs, 3128 terms)
+  indexed [34] https://quotes.toscrape.com/page/6/
+2026-05-10 18:41:12,463 DEBUG src.crawler: Throttling for 5.93s
+2026-05-10 18:41:18,393 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Haruki-Murakami
+2026-05-10 18:41:18,704 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Haruki-Murakami HTTP/1.1" 308 287
+2026-05-10 18:41:18,708 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:41:19,307 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Haruki-Murakami/ HTTP/1.1" 200 3029
+2026-05-10 18:41:19,311 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Haruki-Murakami (283 tokens)
+2026-05-10 18:41:19,365 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (35 docs, 3188 terms)
+  indexed [35] https://quotes.toscrape.com/author/Haruki-Murakami
+2026-05-10 18:41:19,366 DEBUG src.crawler: Throttling for 5.94s
+2026-05-10 18:41:25,309 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Alexandre-Dumas-fils
+2026-05-10 18:41:25,611 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Alexandre-Dumas-fils HTTP/1.1" 308 297
+2026-05-10 18:41:25,617 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:41:26,268 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Alexandre-Dumas-fils/ HTTP/1.1" 200 4281
+2026-05-10 18:41:26,272 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Alexandre-Dumas-fils (495 tokens)
+2026-05-10 18:41:26,327 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (36 docs, 3299 terms)
+  indexed [36] https://quotes.toscrape.com/author/Alexandre-Dumas-fils
+2026-05-10 18:41:26,328 DEBUG src.crawler: Throttling for 5.94s
+2026-05-10 18:41:32,274 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Stephenie-Meyer
+2026-05-10 18:41:32,576 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Stephenie-Meyer HTTP/1.1" 308 287
+2026-05-10 18:41:32,582 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:41:33,242 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Stephenie-Meyer/ HTTP/1.1" 200 3967
+2026-05-10 18:41:33,246 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Stephenie-Meyer (476 tokens)
+2026-05-10 18:41:33,304 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (37 docs, 3385 terms)
+  indexed [37] https://quotes.toscrape.com/author/Stephenie-Meyer
+2026-05-10 18:41:33,305 DEBUG src.crawler: Throttling for 5.94s
+2026-05-10 18:41:39,248 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Ernest-Hemingway
+2026-05-10 18:41:39,548 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Ernest-Hemingway HTTP/1.1" 308 289
+2026-05-10 18:41:39,554 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:41:40,204 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Ernest-Hemingway/ HTTP/1.1" 200 3552
+2026-05-10 18:41:40,208 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Ernest-Hemingway (383 tokens)
+2026-05-10 18:41:40,255 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (38 docs, 3442 terms)
+  indexed [38] https://quotes.toscrape.com/author/Ernest-Hemingway
+2026-05-10 18:41:40,256 DEBUG src.crawler: Throttling for 5.95s
+2026-05-10 18:41:46,210 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Helen-Keller
+2026-05-10 18:41:46,520 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Helen-Keller HTTP/1.1" 308 281
+2026-05-10 18:41:46,525 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:41:47,129 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Helen-Keller/ HTTP/1.1" 200 4143
+2026-05-10 18:41:47,134 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Helen-Keller (491 tokens)
+2026-05-10 18:41:47,196 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (39 docs, 3542 terms)
+  indexed [39] https://quotes.toscrape.com/author/Helen-Keller
+2026-05-10 18:41:47,197 DEBUG src.crawler: Throttling for 5.93s
+2026-05-10 18:41:53,135 INFO src.crawler: Fetching https://quotes.toscrape.com/author/George-Bernard-Shaw
+2026-05-10 18:41:53,439 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/George-Bernard-Shaw HTTP/1.1" 308 295
+2026-05-10 18:41:53,443 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:41:54,090 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/George-Bernard-Shaw/ HTTP/1.1" 200 3329
+2026-05-10 18:41:54,095 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/George-Bernard-Shaw (337 tokens)
+2026-05-10 18:41:54,156 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (40 docs, 3609 terms)
+  indexed [40] https://quotes.toscrape.com/author/George-Bernard-Shaw
+2026-05-10 18:41:54,157 DEBUG src.crawler: Throttling for 5.93s
+2026-05-10 18:42:00,096 INFO src.crawler: Fetching https://quotes.toscrape.com/page/7/
+2026-05-10 18:42:00,398 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/7/ HTTP/1.1" 200 10722
+2026-05-10 18:42:00,410 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/7/ (416 tokens)
+2026-05-10 18:42:00,471 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (41 docs, 3678 terms)
+  indexed [41] https://quotes.toscrape.com/page/7/
+2026-05-10 18:42:00,474 DEBUG src.crawler: Throttling for 5.93s
+2026-05-10 18:42:06,405 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Charles-Bukowski
+2026-05-10 18:42:06,712 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Charles-Bukowski HTTP/1.1" 308 289
+2026-05-10 18:42:06,717 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:42:07,355 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Charles-Bukowski/ HTTP/1.1" 200 3212
+2026-05-10 18:42:07,360 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Charles-Bukowski (335 tokens)
+2026-05-10 18:42:07,424 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (42 docs, 3734 terms)
+  indexed [42] https://quotes.toscrape.com/author/Charles-Bukowski
+2026-05-10 18:42:07,425 DEBUG src.crawler: Throttling for 5.93s
+2026-05-10 18:42:13,359 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Suzanne-Collins
+2026-05-10 18:42:13,669 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Suzanne-Collins HTTP/1.1" 308 287
+2026-05-10 18:42:13,675 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:42:14,278 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Suzanne-Collins/ HTTP/1.1" 200 3035
+2026-05-10 18:42:14,283 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Suzanne-Collins (298 tokens)
+2026-05-10 18:42:14,347 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (43 docs, 3787 terms)
+  indexed [43] https://quotes.toscrape.com/author/Suzanne-Collins
+2026-05-10 18:42:14,348 DEBUG src.crawler: Throttling for 5.93s
+2026-05-10 18:42:20,284 INFO src.crawler: Fetching https://quotes.toscrape.com/author/J-R-R-Tolkien
+2026-05-10 18:42:20,587 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/J-R-R-Tolkien HTTP/1.1" 308 283
+2026-05-10 18:42:20,593 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:42:21,261 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/J-R-R-Tolkien/ HTTP/1.1" 200 4549
+2026-05-10 18:42:21,265 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/J-R-R-Tolkien (519 tokens)
+2026-05-10 18:42:21,327 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (44 docs, 3880 terms)
+  indexed [44] https://quotes.toscrape.com/author/J-R-R-Tolkien
+2026-05-10 18:42:21,328 DEBUG src.crawler: Throttling for 5.93s
+2026-05-10 18:42:27,267 INFO src.crawler: Fetching https://quotes.toscrape.com/page/8/
+2026-05-10 18:42:27,571 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/8/ HTTP/1.1" 200 11393
+2026-05-10 18:42:27,581 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/8/ (316 tokens)
+2026-05-10 18:42:27,657 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (45 docs, 3918 terms)
+  indexed [45] https://quotes.toscrape.com/page/8/
+2026-05-10 18:42:27,661 DEBUG src.crawler: Throttling for 5.91s
+2026-05-10 18:42:33,577 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Alfred-Tennyson
+2026-05-10 18:42:33,879 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Alfred-Tennyson HTTP/1.1" 308 287
+2026-05-10 18:42:33,883 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:42:34,483 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Alfred-Tennyson/ HTTP/1.1" 200 2932
+2026-05-10 18:42:34,486 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Alfred-Tennyson (280 tokens)
+2026-05-10 18:42:34,561 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (46 docs, 3964 terms)
+  indexed [46] https://quotes.toscrape.com/author/Alfred-Tennyson
+2026-05-10 18:42:34,562 DEBUG src.crawler: Throttling for 5.92s
+2026-05-10 18:42:40,488 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Terry-Pratchett
+2026-05-10 18:42:40,790 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Terry-Pratchett HTTP/1.1" 308 287
+2026-05-10 18:42:40,794 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:42:41,417 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Terry-Pratchett/ HTTP/1.1" 200 3408
+2026-05-10 18:42:41,419 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Terry-Pratchett (342 tokens)
+2026-05-10 18:42:41,462 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (47 docs, 4022 terms)
+  indexed [47] https://quotes.toscrape.com/author/Terry-Pratchett
+2026-05-10 18:42:41,463 DEBUG src.crawler: Throttling for 5.95s
+2026-05-10 18:42:47,423 INFO src.crawler: Fetching https://quotes.toscrape.com/author/J-D-Salinger
+2026-05-10 18:42:47,730 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/J-D-Salinger HTTP/1.1" 308 281
+2026-05-10 18:42:47,736 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:42:48,373 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/J-D-Salinger/ HTTP/1.1" 200 3603
+2026-05-10 18:42:48,379 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/J-D-Salinger (375 tokens)
+2026-05-10 18:42:48,448 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (48 docs, 4075 terms)
+  indexed [48] https://quotes.toscrape.com/author/J-D-Salinger
+2026-05-10 18:42:48,449 DEBUG src.crawler: Throttling for 5.92s
+2026-05-10 18:42:54,378 INFO src.crawler: Fetching https://quotes.toscrape.com/author/George-Carlin
+2026-05-10 18:42:54,682 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/George-Carlin HTTP/1.1" 308 283
+2026-05-10 18:42:54,687 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:42:55,342 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/George-Carlin/ HTTP/1.1" 200 2524
+2026-05-10 18:42:55,346 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/George-Carlin (207 tokens)
+2026-05-10 18:42:55,391 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (49 docs, 4108 terms)
+  indexed [49] https://quotes.toscrape.com/author/George-Carlin
+2026-05-10 18:42:55,391 DEBUG src.crawler: Throttling for 5.95s
+2026-05-10 18:43:01,350 INFO src.crawler: Fetching https://quotes.toscrape.com/author/John-Lennon
+2026-05-10 18:43:01,653 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/John-Lennon HTTP/1.1" 308 279
+2026-05-10 18:43:01,658 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:43:02,280 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/John-Lennon/ HTTP/1.1" 200 3452
+2026-05-10 18:43:02,285 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/John-Lennon (367 tokens)
+2026-05-10 18:43:02,361 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (50 docs, 4168 terms)
+  indexed [50] https://quotes.toscrape.com/author/John-Lennon
+2026-05-10 18:43:02,362 DEBUG src.crawler: Throttling for 5.92s
+2026-05-10 18:43:08,281 INFO src.crawler: Fetching https://quotes.toscrape.com/author/W-C-Fields
+2026-05-10 18:43:08,582 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/W-C-Fields HTTP/1.1" 308 277
+2026-05-10 18:43:08,587 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:43:09,195 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/W-C-Fields/ HTTP/1.1" 200 2894
+2026-05-10 18:43:09,199 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/W-C-Fields (278 tokens)
+2026-05-10 18:43:09,264 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (51 docs, 4227 terms)
+  indexed [51] https://quotes.toscrape.com/author/W-C-Fields
+2026-05-10 18:43:09,265 DEBUG src.crawler: Throttling for 5.93s
+2026-05-10 18:43:15,198 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Ayn-Rand
+2026-05-10 18:43:15,499 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Ayn-Rand HTTP/1.1" 308 273
+2026-05-10 18:43:15,504 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:43:16,112 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Ayn-Rand/ HTTP/1.1" 200 3125
+2026-05-10 18:43:16,117 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Ayn-Rand (294 tokens)
+2026-05-10 18:43:16,191 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (52 docs, 4284 terms)
+  indexed [52] https://quotes.toscrape.com/author/Ayn-Rand
+2026-05-10 18:43:16,192 DEBUG src.crawler: Throttling for 5.92s
+2026-05-10 18:43:22,119 INFO src.crawler: Fetching https://quotes.toscrape.com/page/9/
+2026-05-10 18:43:22,422 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/9/ HTTP/1.1" 200 11022
+2026-05-10 18:43:22,434 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/9/ (392 tokens)
+2026-05-10 18:43:22,506 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (53 docs, 4323 terms)
+  indexed [53] https://quotes.toscrape.com/page/9/
+2026-05-10 18:43:22,510 DEBUG src.crawler: Throttling for 5.91s
+2026-05-10 18:43:28,429 INFO src.crawler: Fetching https://quotes.toscrape.com/page/10/
+2026-05-10 18:43:28,732 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /page/10/ HTTP/1.1" 200 9943
+2026-05-10 18:43:28,742 DEBUG src.indexer: Indexed https://quotes.toscrape.com/page/10/ (275 tokens)
+2026-05-10 18:43:28,811 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (54 docs, 4348 terms)
+  indexed [54] https://quotes.toscrape.com/page/10/
+2026-05-10 18:43:28,814 DEBUG src.crawler: Throttling for 5.92s
+2026-05-10 18:43:34,738 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Jimi-Hendrix
+2026-05-10 18:43:35,045 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Jimi-Hendrix HTTP/1.1" 308 281
+2026-05-10 18:43:35,051 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:43:35,649 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Jimi-Hendrix/ HTTP/1.1" 200 3088
+2026-05-10 18:43:35,653 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Jimi-Hendrix (297 tokens)
+2026-05-10 18:43:35,735 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (55 docs, 4386 terms)
+  indexed [55] https://quotes.toscrape.com/author/Jimi-Hendrix
+2026-05-10 18:43:35,736 DEBUG src.crawler: Throttling for 5.91s
+2026-05-10 18:43:41,655 INFO src.crawler: Fetching https://quotes.toscrape.com/author/J-M-Barrie
+2026-05-10 18:43:41,971 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/J-M-Barrie HTTP/1.1" 308 277
+2026-05-10 18:43:41,977 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:43:42,594 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/J-M-Barrie/ HTTP/1.1" 200 2556
+2026-05-10 18:43:42,598 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/J-M-Barrie (215 tokens)
+2026-05-10 18:43:42,677 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (56 docs, 4416 terms)
+  indexed [56] https://quotes.toscrape.com/author/J-M-Barrie
+2026-05-10 18:43:42,678 DEBUG src.crawler: Throttling for 5.92s
+2026-05-10 18:43:48,600 INFO src.crawler: Fetching https://quotes.toscrape.com/author/E-E-Cummings
+2026-05-10 18:43:48,901 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/E-E-Cummings HTTP/1.1" 308 281
+2026-05-10 18:43:48,906 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:43:49,524 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/E-E-Cummings/ HTTP/1.1" 200 4221
+2026-05-10 18:43:49,529 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/E-E-Cummings (470 tokens)
+2026-05-10 18:43:49,612 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (57 docs, 4491 terms)
+  indexed [57] https://quotes.toscrape.com/author/E-E-Cummings
+2026-05-10 18:43:49,612 DEBUG src.crawler: Throttling for 5.91s
+2026-05-10 18:43:55,530 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Khaled-Hosseini
+2026-05-10 18:43:55,832 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Khaled-Hosseini HTTP/1.1" 308 287
+2026-05-10 18:43:55,837 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:43:56,501 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Khaled-Hosseini/ HTTP/1.1" 200 3075
+2026-05-10 18:43:56,505 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Khaled-Hosseini (297 tokens)
+2026-05-10 18:43:56,582 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (58 docs, 4531 terms)
+  indexed [58] https://quotes.toscrape.com/author/Khaled-Hosseini
+2026-05-10 18:43:56,583 DEBUG src.crawler: Throttling for 5.92s
+2026-05-10 18:44:02,507 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Harper-Lee
+2026-05-10 18:44:02,808 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Harper-Lee HTTP/1.1" 308 277
+2026-05-10 18:44:02,815 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:44:03,497 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Harper-Lee/ HTTP/1.1" 200 3450
+2026-05-10 18:44:03,502 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Harper-Lee (372 tokens)
+2026-05-10 18:44:03,580 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (59 docs, 4590 terms)
+  indexed [59] https://quotes.toscrape.com/author/Harper-Lee
+2026-05-10 18:44:03,581 DEBUG src.crawler: Throttling for 5.92s
+2026-05-10 18:44:09,503 INFO src.crawler: Fetching https://quotes.toscrape.com/author/Madeleine-LEngle
+2026-05-10 18:44:09,806 DEBUG urllib3.connectionpool: https://quotes.toscrape.com:443 "GET /author/Madeleine-LEngle HTTP/1.1" 308 289
+2026-05-10 18:44:09,811 DEBUG urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+2026-05-10 18:44:10,420 DEBUG urllib3.connectionpool: http://127.0.0.1:7897 "GET http://quotes.toscrape.com/author/Madeleine-LEngle/ HTTP/1.1" 200 4287
+2026-05-10 18:44:10,425 DEBUG src.indexer: Indexed https://quotes.toscrape.com/author/Madeleine-LEngle (506 tokens)
+2026-05-10 18:44:10,505 INFO src.indexer: Wrote index to /Users/berwin/Desktop/project/cw_web2/data/index.json (60 docs, 4650 terms)
+  indexed [60] https://quotes.toscrape.com/author/Madeleine-LEngle
+Build complete: crawled 60 page(s), 60 document(s) in index, 4650 term(s).
 Index saved to /Users/berwin/Desktop/project/cw_web2/data/index.json
